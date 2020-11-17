@@ -1,5 +1,6 @@
 // Ricreare lo slider di immagini ma questa volta con Vue. Partiamo dallo zip che vi passo, facciamo funzionare i bottoni next e prev e mettiamo in pagina i pallini.
-//Bonus: facciamo si che sia evidenziato solo il pallino relativo all’img in corso.
+//Bonus: facciamo si che sia evidenziato solo il pallino relativo all’img in corso (line25 html).
+//Bonus: cambiare immagini cliccando su i pallini (line31-34)
 
 var app = new Vue({
     el: "#app",
@@ -26,6 +27,10 @@ var app = new Vue({
             if (this.pictureIndex < 0) {
                 this.pictureIndex = (this.picture.length -1);
             }
+        },
+        //cambiare immagini cliccando su i pallini
+        changePictureCircle: function(index) {
+            this.pictureIndex = index;
         }
     }
-})
+});
