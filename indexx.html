@@ -12,21 +12,22 @@
     
     <div id="app" class="container">
         <div class="slider-wrapper">
-            <div class="prev" >
+            <div class="prev" @click="prevPicture">
                 <i class="fas fa-angle-left"></i>
             </div>
             <div class="images">
-                <img src="" alt="">
+                <img :src="picture[pictureIndex]">
             </div>
-            <div class="next" >
+            <div class="next" @click="nextPicture">
                 <i class="fas fa-angle-right"></i>
             </div>
             <div class="nav">
-              <i class="fas fa-circle"></i>
+              <i v-for="(picture, index) in picture" class="fas fa-circle"></i>
             </div>
         </div>
     </div>
 
+    <!-- v-for="(picture, index) in picture" per stampare tanti pallini quante sono le immagini-->
 
     <script src="js/script.js"></script>
 
